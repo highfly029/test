@@ -17,6 +17,7 @@
 
     <modules>
         <module>mapTest</module>
+        <module>pb2java</module>
     </modules>
 
 </project>
