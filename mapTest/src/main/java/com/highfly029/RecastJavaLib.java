@@ -66,24 +66,43 @@ public class RecastJavaLib {
         myEnd[1] = 1.1f;
         myEnd[2] = 1.4f;
 
+        //通过测试，发现raycast明显用时比较少 10000次raycast调用耗时3ms
+        /**
+         * 10000次调用 raycast耗时3ms find耗时23ms
+         * 100000次调用 raycast耗时27ms find耗时193ms
+         */
+        long testNum = 1;
+
+
         //find 返回null找不到路径 实际调用的findStraightPath
-        List<float[]> list = recast.find(meshId, myStart[0], myStart[1], myStart[2], myEnd[0], myEnd[1], myEnd[2]);
-        if (list != null) {
-            for (float[] l : list) {
-                System.out.println("find paths:" + l[0] + " " + l[1] + " " + l[2]);
+        long beginTime  = System.currentTimeMillis();
+        for (long i = 0; i < testNum; i++) {
+            List<float[]> list = recast.find(meshId, myStart[0], myStart[1], myStart[2], myEnd[0], myEnd[1], myEnd[2]);
+            if (list != null) {
+                for (float[] l : list) {
+                    System.out.println("find paths:" + l[0] + " " + l[1] + " " + l[2]);
+                }
+            } else {
+                System.out.println("find paths null");
             }
-        } else {
-            System.out.println("find paths null");
         }
+        long endTime = System.currentTimeMillis();
+//        System.out.println("find cost time="+(endTime-beginTime));
+
 
         //raycast 返回null没有碰撞到可以走，如果返回数值，则为碰撞点。 实际调用的是raycast
-        List<float[]> list2 = recast.raycast(meshId, myStart[0], myStart[1], myStart[2], myEnd[0], myEnd[1], myEnd[2]);
-        if (list2 != null) {
-            for (float[] l : list2) {
-                System.out.println("raycast paths:" + l[0] + " " + l[1] + " " + l[2]);
+        beginTime = System.currentTimeMillis();
+        for (long i = 0; i < testNum; i++) {
+            List<float[]> list2 = recast.raycast(meshId, myStart[0], myStart[1], myStart[2], myEnd[0], myEnd[1], myEnd[2]);
+            if (list2 != null) {
+                for (float[] l : list2) {
+                    System.out.println("raycast paths:" + l[0] + " " + l[1] + " " + l[2]);
+                }
+            } else {
+                System.out.println("raycast paths null");
             }
-        } else {
-            System.out.println("raycast paths null");
         }
+        endTime = System.currentTimeMillis();
+//        System.out.println("raycast cost time="+(endTime-beginTime));
     }
 }
