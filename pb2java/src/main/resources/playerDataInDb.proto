@@ -1,0 +1,58 @@
+/* netty proto */
+syntax = "proto3";
+package test;
+/*包名*/ 
+option java_package = "com.highfly029.packet";
+/*类名*/
+option java_outer_classname = "PbPlayerDataInDb";
+
+message PlayerMainDataInDb{
+	PlayerAttributeDataInDb attr = 1;
+	PlayerBagDataInDb bag = 2;
+}
+
+message PlayerAttributeDataInDb {
+	int64 playId = 1;
+}
+
+message PlayerBagDataInDb {
+	int32 id = 1;
+	string name = 2;
+	int64 testInt64 = 3;
+	float testFloat = 4;
+	double testDouble = 5;
+	bool testBool = 6;
+	bytes testBytes = 7;
+	TestEnum testEnum = 8;
+	repeated string strList = 9;
+	ObjComposite testObj = 10;
+}
+
+enum TestEnum {
+	None = 0;
+	enum1 = 1;
+	enum2 = 2;
+}
+
+message ObjComposite {
+	string cName = 1;
+	ObjA a = 2;
+	repeated ObjB bArray = 3;
+}
+
+message ObjA {
+	string aName = 1;
+	ObjBase baseName = 2;
+}
+
+message ObjB {
+	string bName = 1;
+	ObjBase baseName = 2;
+}
+
+message ObjBase {
+	string baseName = 1;
+}
+
+
+
