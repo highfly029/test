@@ -18,6 +18,7 @@
     <modules>
         <module>mapTest</module>
         <module>pb2java</module>
+        <module>javaPerformanceTest</module>
     </modules>
 
 </project>

@@ -62,9 +62,9 @@ public class RecastJavaLib {
         myStart[2] = 0.4f;
 
         float[] myEnd = new float[3];
-        myEnd[0] = 1.4f;
-        myEnd[1] = 1.1f;
-        myEnd[2] = 1.4f;
+        myEnd[0] = 0.4f;
+        myEnd[1] = 0.1f;
+        myEnd[2] = 100.4f;
 
         //通过测试，发现raycast明显用时比较少 10000次raycast调用耗时3ms
         /**
