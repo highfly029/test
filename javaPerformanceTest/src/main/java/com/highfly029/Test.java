@@ -10,9 +10,9 @@ package com.highfly029;
  * @Date 2019/4/16/016 10:09
  **/
 public class Test {
-    private int a;
-    private int[] b;
-    private TestObj obj;
+    public int a;
+    public int[] b;
+    public TestObj obj;
 
     public int getA() {
         return a;
@@ -39,8 +39,8 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        long num = 1000000000L;
-//        long num = 1L;
+//        long num = 1000000000L;
+        long num = 1L;
         long startTime = System.currentTimeMillis();
         TestObj obj = new TestObj();
         obj.setObjA((short) 1);
@@ -62,8 +62,9 @@ public class Test {
 //            int tmp = test.getA() + test.getB()[0] + test.getObj().getObjA() + test.getObj().getObjB()[0];
 //            int tmp1 = testA +testB + testObj.getObjA() + testObj.getObjB()[0];
 //            int tmp2 = testA + testB + objA + objB;
-            int tmpNew = testA + tmpB[0] + objA + tmpObjB[0];
-//            System.out.println(tmp);
+//            int tmpNew = testA + tmpB[0] + objA + tmpObjB[0];
+//            int tmp3 = test.a + test.b[0] +  test.obj.objA + test.obj.objB[0];
+//            System.out.println(tmp3);
         }
         long endTime = System.currentTimeMillis();
         long time = endTime - startTime;
@@ -72,8 +73,8 @@ public class Test {
 }
 
 class TestObj {
-    private short objA;
-    private short[] objB;
+    public short objA;
+    public short[] objB;
 
     public short getObjA() {
         return objA;
