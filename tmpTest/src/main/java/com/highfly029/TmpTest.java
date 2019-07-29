@@ -1,5 +1,13 @@
 package com.highfly029;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 /**
  * @ClassName TmpTest
  * @Description TODO
@@ -13,5 +21,9 @@ public class TmpTest {
         long c = a << 16;
         long d = c | b;
         System.out.println("d="+d);
+        List list1 = new ArrayList();
+        List list2 = new LinkedList();
+        Map map = new HashMap();
+        Set set = new HashSet();
     }
 }
