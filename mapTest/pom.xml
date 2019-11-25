@@ -20,7 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>com.highfly029</groupId>
-            <artifactId>recast</artifactId>
+            <artifactId>GameNativeLibrary</artifactId>
             <version>1.0.0</version>
         </dependency>
         <!--<dependency>-->
@@ -33,6 +33,7 @@
         <!--<artifactId>detour</artifactId>-->
         <!--<version>1.2.0</version>-->
         <!--</dependency>-->
+
     </dependencies>
 
 </project>

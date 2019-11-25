@@ -3,8 +3,6 @@ package com.highfly029;
 import java.io.File;
 import java.util.List;
 
-import com.seasun.navmesh.RecastLib;
-
 /**
  * @ClassName RecastJavaLib
  * @Description TODO
@@ -13,7 +11,7 @@ import com.seasun.navmesh.RecastLib;
  **/
 public class RecastJavaLib {
     public static void main(String[] args) {
-        RecastLib recast = new RecastLib();
+        GameNativeLibrary recast = new GameNativeLibrary();
         //srv_CAIBakedNavmesh 1.72,3.57,30 addNum=6 raycast
         //2_DongXue_02_Navmesh 117,30,259
         //2_YiDouCun_Navmesh 8,19.26,10
@@ -93,7 +91,7 @@ public class RecastJavaLib {
         //raycast 返回null没有碰撞到可以走，如果返回数值，则为碰撞点。 实际调用的是raycast
         beginTime = System.currentTimeMillis();
         for (long i = 0; i < testNum; i++) {
-            List<float[]> list2 = recast.raycast(meshId, myStart[0], myStart[1], myStart[2], myEnd[0], myEnd[1], myEnd[2]);
+            List<float[]> list2 = recast.rayCast(meshId, myStart[0], myStart[1], myStart[2], myEnd[0], myEnd[1], myEnd[2]);
             if (list2 != null) {
                 for (float[] l : list2) {
                     System.out.println("raycast paths:" + l[0] + " " + l[1] + " " + l[2]);

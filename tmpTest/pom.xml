@@ -6,7 +6,16 @@
 
     <groupId>com.highfly029</groupId>
     <artifactId>tmpTest</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.twitter/util-hashing -->
+        <dependency>
+            <groupId>com.twitter</groupId>
+            <artifactId>util-hashing_2.13</artifactId>
+            <version>19.11.0</version>
+        </dependency>
 
 
+    </dependencies>
 </project>
